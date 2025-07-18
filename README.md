@@ -461,6 +461,6 @@ These laboratory materials were developed with input from:
 **International Cybersecurity and Digital Forensics Academy (ICDFA)**  
 **Empowering the Next Generation of Cybersecurity Professionals**
 
-*Last Updated: January 2025*  
+*Last Updated: July 2025*  
 *Version: 1.0*
 
