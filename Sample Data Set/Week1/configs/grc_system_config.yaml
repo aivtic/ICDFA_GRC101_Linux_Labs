@@ -1,0 +1,259 @@
+# ICDFA GRC101 Week 1 - GRC System Configuration
+# Sample configuration file for GRC framework implementation
+
+# Database Configuration
+database:
+  type: "sqlite"
+  path: "/opt/grc_system/data/grc_frameworks.db"
+  backup_path: "/opt/grc_system/backups/"
+  backup_frequency: "daily"
+  retention_days: 365
+
+# Framework Configuration
+frameworks:
+  enabled:
+    - "NIST_CSF"
+    - "ISO27001"
+    - "COBIT"
+    - "COSO"
+    - "SOX"
+    - "GDPR"
+    - "HIPAA"
+    - "PCI_DSS"
+  
+  default_framework: "NIST_CSF"
+  
+  assessment_frequency:
+    NIST_CSF: "quarterly"
+    ISO27001: "annually"
+    COBIT: "semi-annually"
+    COSO: "quarterly"
+    SOX: "quarterly"
+    GDPR: "annually"
+    HIPAA: "annually"
+    PCI_DSS: "quarterly"
+
+# Policy Management
+policies:
+  storage_path: "/opt/grc_system/policies/"
+  template_path: "/opt/grc_system/templates/policies/"
+  review_frequency: "annually"
+  approval_workflow: true
+  version_control: true
+  
+  categories:
+    - "Security"
+    - "Privacy"
+    - "Risk"
+    - "Operational"
+    - "Ethics"
+    - "Compliance"
+
+# Control Management
+controls:
+  testing_frequency:
+    technical: "monthly"
+    administrative: "quarterly"
+    physical: "quarterly"
+  
+  effectiveness_scale:
+    min: 1
+    max: 10
+    target: 8
+  
+  implementation_statuses:
+    - "NOT_IMPLEMENTED"
+    - "PARTIALLY_IMPLEMENTED"
+    - "IMPLEMENTED"
+    - "OPTIMIZED"
+
+# Governance Structure
+governance:
+  board_reporting_frequency: "quarterly"
+  committee_meeting_frequency: "monthly"
+  executive_reporting_frequency: "weekly"
+  
+  committees:
+    - name: "Risk Committee"
+      frequency: "monthly"
+      members: 5
+    - name: "Audit Committee"
+      frequency: "quarterly"
+      members: 4
+    - name: "IT Steering Committee"
+      frequency: "monthly"
+      members: 8
+
+# Reporting Configuration
+reporting:
+  output_path: "/opt/grc_system/reports/"
+  formats:
+    - "pdf"
+    - "html"
+    - "csv"
+    - "json"
+  
+  dashboard_refresh: "daily"
+  executive_summary_frequency: "monthly"
+  
+  templates:
+    executive_summary: "/opt/grc_system/templates/executive_summary.html"
+    detailed_report: "/opt/grc_system/templates/detailed_report.html"
+    compliance_report: "/opt/grc_system/templates/compliance_report.html"
+
+# Assessment Configuration
+assessments:
+  auto_schedule: true
+  reminder_days: 30
+  escalation_days: 7
+  
+  scoring:
+    compliant: 100
+    partially_compliant: 50
+    non_compliant: 0
+  
+  evidence_storage: "/opt/grc_system/evidence/"
+  evidence_retention_years: 7
+
+# Integration Settings
+integrations:
+  ldap:
+    enabled: false
+    server: "ldap://company.local"
+    base_dn: "dc=company,dc=local"
+  
+  siem:
+    enabled: false
+    type: "splunk"
+    endpoint: "https://siem.company.com:8089"
+  
+  ticketing:
+    enabled: false
+    type: "jira"
+    endpoint: "https://jira.company.com"
+
+# Security Settings
+security:
+  encryption:
+    enabled: true
+    algorithm: "AES-256"
+    key_rotation_days: 90
+  
+  authentication:
+    mfa_required: true
+    session_timeout: 3600
+    password_policy:
+      min_length: 12
+      require_special: true
+      require_numbers: true
+      require_uppercase: true
+  
+  audit_logging:
+    enabled: true
+    log_path: "/opt/grc_system/logs/audit.log"
+    retention_days: 2555  # 7 years
+
+# Notification Settings
+notifications:
+  email:
+    enabled: true
+    smtp_server: "smtp.company.com"
+    smtp_port: 587
+    from_address: "grc-system@company.com"
+  
+  alerts:
+    control_failure: true
+    assessment_due: true
+    policy_expiration: true
+    compliance_violation: true
+  
+  recipients:
+    executives:
+      - "ceo@company.com"
+      - "ciso@company.com"
+      - "cro@company.com"
+    
+    managers:
+      - "it-manager@company.com"
+      - "security-manager@company.com"
+      - "compliance-manager@company.com"
+
+# Performance Settings
+performance:
+  cache_enabled: true
+  cache_ttl: 3600
+  max_concurrent_assessments: 5
+  database_pool_size: 10
+  
+  monitoring:
+    enabled: true
+    metrics_endpoint: "/metrics"
+    health_check_endpoint: "/health"
+
+# Backup and Recovery
+backup:
+  enabled: true
+  frequency: "daily"
+  retention_days: 90
+  compression: true
+  encryption: true
+  
+  destinations:
+    - type: "local"
+      path: "/opt/grc_system/backups/"
+    - type: "cloud"
+      provider: "aws_s3"
+      bucket: "company-grc-backups"
+
+# Logging Configuration
+logging:
+  level: "INFO"
+  format: "json"
+  output: "/opt/grc_system/logs/application.log"
+  rotation: "daily"
+  retention_days: 365
+  
+  loggers:
+    database: "DEBUG"
+    authentication: "INFO"
+    assessments: "INFO"
+    reporting: "WARN"
+
+# Development Settings (for lab environment)
+development:
+  debug_mode: true
+  sample_data: true
+  test_mode: false
+  mock_integrations: true
+  
+  test_users:
+    - username: "admin"
+      role: "administrator"
+      email: "admin@lab.local"
+    - username: "auditor"
+      role: "auditor"
+      email: "auditor@lab.local"
+    - username: "manager"
+      role: "manager"
+      email: "manager@lab.local"
+
+# API Configuration
+api:
+  enabled: true
+  version: "v1"
+  base_path: "/api/v1"
+  rate_limiting: true
+  requests_per_minute: 100
+  
+  authentication:
+    type: "jwt"
+    secret_key: "lab-secret-key-change-in-production"
+    token_expiry: 3600
+  
+  endpoints:
+    frameworks: "/frameworks"
+    policies: "/policies"
+    controls: "/controls"
+    assessments: "/assessments"
+    reports: "/reports"
+

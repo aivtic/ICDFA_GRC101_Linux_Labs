@@ -1,0 +1,332 @@
+{
+  "gdpr_compliance_system": {
+    "version": "2.1",
+    "last_updated": "2024-01-15",
+    "organization": {
+      "name": "ACME Corporation",
+      "dpo_contact": "dpo@acme.com",
+      "supervisory_authority": "ICO (UK)",
+      "registration_number": "Z1234567"
+    }
+  },
+  
+  "data_processing_activities": {
+    "ropa_location": "/opt/gdpr_system/ropa/",
+    "update_frequency": "quarterly",
+    "review_required": true,
+    "approval_workflow": true,
+    
+    "legal_bases": [
+      "consent",
+      "contract",
+      "legal_obligation",
+      "vital_interests",
+      "public_task",
+      "legitimate_interests"
+    ],
+    
+    "data_categories": [
+      "personal_identifiers",
+      "contact_information",
+      "financial_data",
+      "employment_data",
+      "health_data",
+      "biometric_data",
+      "location_data",
+      "behavioral_data"
+    ],
+    
+    "retention_periods": {
+      "employee_data": "7_years_after_termination",
+      "customer_data": "5_years_after_last_interaction",
+      "marketing_data": "until_consent_withdrawn",
+      "financial_data": "7_years_for_tax_purposes",
+      "health_data": "10_years_after_treatment"
+    }
+  },
+  
+  "data_subject_rights": {
+    "request_handling": {
+      "response_time_days": 30,
+      "extension_allowed": true,
+      "extension_max_days": 60,
+      "automated_processing": true
+    },
+    
+    "supported_rights": [
+      "access",
+      "rectification",
+      "erasure",
+      "restrict_processing",
+      "data_portability",
+      "object_processing",
+      "withdraw_consent"
+    ],
+    
+    "request_channels": [
+      "email",
+      "web_form",
+      "postal_mail",
+      "phone"
+    ],
+    
+    "verification_methods": [
+      "identity_document",
+      "security_questions",
+      "two_factor_authentication",
+      "digital_signature"
+    ]
+  },
+  
+  "consent_management": {
+    "consent_types": [
+      "marketing_communications",
+      "data_analytics",
+      "third_party_sharing",
+      "profiling",
+      "automated_decision_making"
+    ],
+    
+    "consent_requirements": {
+      "freely_given": true,
+      "specific": true,
+      "informed": true,
+      "unambiguous": true,
+      "withdrawable": true
+    },
+    
+    "consent_records": {
+      "storage_location": "/opt/gdpr_system/consent/",
+      "retention_period": "2_years_after_withdrawal",
+      "audit_trail": true,
+      "proof_of_consent": true
+    }
+  },
+  
+  "privacy_by_design": {
+    "default_settings": {
+      "data_minimization": true,
+      "purpose_limitation": true,
+      "storage_limitation": true,
+      "privacy_first": true
+    },
+    
+    "technical_measures": [
+      "pseudonymization",
+      "encryption_at_rest",
+      "encryption_in_transit",
+      "access_controls",
+      "audit_logging",
+      "data_masking"
+    ],
+    
+    "organizational_measures": [
+      "privacy_policies",
+      "staff_training",
+      "privacy_impact_assessments",
+      "vendor_agreements",
+      "incident_response_procedures"
+    ]
+  },
+  
+  "data_protection_impact_assessment": {
+    "dpia_required": {
+      "systematic_monitoring": true,
+      "large_scale_special_categories": true,
+      "large_scale_criminal_data": true,
+      "automated_decision_making": true,
+      "biometric_identification": true,
+      "genetic_data_processing": true,
+      "location_tracking": true,
+      "children_data_processing": true
+    },
+    
+    "dpia_process": {
+      "template_location": "/opt/gdpr_system/templates/dpia_template.pdf",
+      "consultation_required": true,
+      "supervisory_authority_consultation": "high_risk_only",
+      "review_frequency": "annually"
+    },
+    
+    "risk_assessment": {
+      "likelihood_scale": ["remote", "possible", "likely", "very_likely"],
+      "impact_scale": ["minimal", "significant", "severe", "critical"],
+      "risk_threshold": "high",
+      "mitigation_required": true
+    }
+  },
+  
+  "international_transfers": {
+    "adequacy_decisions": [
+      "andorra", "argentina", "canada", "faroe_islands", "guernsey",
+      "israel", "isle_of_man", "japan", "jersey", "new_zealand",
+      "south_korea", "switzerland", "united_kingdom", "uruguay"
+    ],
+    
+    "transfer_mechanisms": [
+      "adequacy_decision",
+      "standard_contractual_clauses",
+      "binding_corporate_rules",
+      "certification_schemes",
+      "codes_of_conduct"
+    ],
+    
+    "safeguards_required": {
+      "standard_contractual_clauses": true,
+      "transfer_impact_assessment": true,
+      "supplementary_measures": true,
+      "ongoing_monitoring": true
+    }
+  },
+  
+  "breach_notification": {
+    "internal_notification": {
+      "dpo_notification_hours": 2,
+      "management_notification_hours": 4,
+      "board_notification_hours": 24
+    },
+    
+    "supervisory_authority": {
+      "notification_hours": 72,
+      "notification_method": "online_portal",
+      "follow_up_required": true,
+      "documentation_required": true
+    },
+    
+    "data_subject_notification": {
+      "high_risk_threshold": true,
+      "notification_method": ["email", "postal_mail", "website_notice"],
+      "clear_language_required": true,
+      "mitigation_measures_included": true
+    },
+    
+    "breach_categories": [
+      "confidentiality_breach",
+      "integrity_breach",
+      "availability_breach"
+    ]
+  },
+  
+  "vendor_management": {
+    "processor_requirements": {
+      "written_contract_required": true,
+      "processing_instructions": "documented",
+      "confidentiality_obligations": true,
+      "security_measures": "appropriate",
+      "sub_processor_authorization": "specific_or_general"
+    },
+    
+    "due_diligence": {
+      "security_assessment": true,
+      "privacy_assessment": true,
+      "compliance_verification": true,
+      "ongoing_monitoring": true
+    },
+    
+    "contract_clauses": [
+      "processing_instructions",
+      "confidentiality",
+      "security_measures",
+      "sub_processor_engagement",
+      "data_subject_rights",
+      "breach_notification",
+      "audit_rights",
+      "data_return_deletion"
+    ]
+  },
+  
+  "training_and_awareness": {
+    "mandatory_training": {
+      "all_staff": "annual",
+      "data_handlers": "bi_annual",
+      "managers": "annual",
+      "it_staff": "quarterly"
+    },
+    
+    "training_modules": [
+      "gdpr_fundamentals",
+      "data_subject_rights",
+      "consent_management",
+      "breach_response",
+      "privacy_by_design",
+      "international_transfers"
+    ],
+    
+    "awareness_activities": [
+      "privacy_week",
+      "phishing_simulations",
+      "privacy_newsletters",
+      "lunch_and_learn_sessions"
+    ]
+  },
+  
+  "monitoring_and_compliance": {
+    "compliance_metrics": [
+      "data_subject_request_response_time",
+      "breach_notification_timeliness",
+      "dpia_completion_rate",
+      "training_completion_rate",
+      "vendor_assessment_completion"
+    ],
+    
+    "audit_schedule": {
+      "internal_audit": "quarterly",
+      "external_audit": "annually",
+      "supervisory_authority_audit": "as_required"
+    },
+    
+    "reporting": {
+      "board_reporting": "quarterly",
+      "management_reporting": "monthly",
+      "supervisory_authority_reporting": "as_required"
+    }
+  },
+  
+  "technical_configuration": {
+    "database": {
+      "encryption": "AES_256",
+      "access_logging": true,
+      "backup_encryption": true,
+      "retention_automation": true
+    },
+    
+    "web_applications": {
+      "cookie_consent": true,
+      "privacy_notices": true,
+      "data_subject_portal": true,
+      "consent_withdrawal": true
+    },
+    
+    "api_endpoints": {
+      "data_subject_requests": "/api/v1/dsr",
+      "consent_management": "/api/v1/consent",
+      "breach_reporting": "/api/v1/breach",
+      "ropa_management": "/api/v1/ropa"
+    }
+  },
+  
+  "incident_response": {
+    "response_team": [
+      "dpo",
+      "legal_counsel",
+      "it_security",
+      "communications",
+      "business_owner"
+    ],
+    
+    "escalation_matrix": {
+      "low_risk": "dpo",
+      "medium_risk": "dpo_and_legal",
+      "high_risk": "full_response_team",
+      "critical": "full_response_team_and_board"
+    },
+    
+    "communication_templates": {
+      "internal_notification": "/templates/internal_breach_notification.html",
+      "supervisory_authority": "/templates/sa_breach_notification.html",
+      "data_subject": "/templates/ds_breach_notification.html",
+      "media_statement": "/templates/media_breach_statement.html"
+    }
+  }
+}
+
