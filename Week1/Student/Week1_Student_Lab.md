@@ -39,6 +39,9 @@ sudo apt update && sudo apt upgrade -y
 
 ### Step 2: Install Required Tools
 ```bash
+#Activate in Linux
+sudo apt install -y software-properties-common
+
 # Install system monitoring and security tools
 sudo apt install -y htop iotop net-tools fail2ban ufw auditd pandoc tree
 
